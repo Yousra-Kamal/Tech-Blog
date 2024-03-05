@@ -1,16 +1,31 @@
-const express = require('express');
-const path = require('path');
-const sequelize = require('./config/connection');
+// Dependencies
+const express = require("express");
 
+const sequelize = require("./config/connection");
+// Import express-handlebars
+const exphbs = require("express-handlebars");
+const hbs = exphbs.create({});
+const path = require("path");
+
+const routes = require("./controllers");
+
+// Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Set Handlebars as the default template engine.
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(routes);
 
-sequelize.sync({force: false}).then(() =>{
-    app.listen(PORT, () => console.log(`now listening`));
+// Starts the server to begin listening
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () =>
+    console.log(`Now listening on http://localhost:${PORT}`)
+  );
 });

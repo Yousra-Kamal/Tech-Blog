@@ -20,7 +20,7 @@ blogPost.init(
         content: {
             type: DataTypes.TEXT,
             allowNull: true,
-            defaultValue: 'I didnt write anything',
+          
         },
         date_created: {
             type: DataTypes.DATE,

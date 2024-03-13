@@ -1,19 +1,4 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tech Blog yousra</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-  </head>
-
-  <body>
-    <header style="background-color: #053aacd3">
+  <header style="background-color: #053aacd3">
       <nav
         class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -52,7 +37,7 @@
             </button>
           </div>
         </div>
-       <!-- logo -->  
+       {{!--   logo  --}}
         <a href="/" class="-m-1.5 p-1.5">
           <span class="sr-only">Tech Blog</span>
           <img
@@ -61,20 +46,15 @@
             alt="tech blog logo"
           />
         </a>
-        <!-- login -->  
+      {{!--    login    --}}
         <div class="flex flex-1 justify-end">
-   <!--   {{!--  {{#if logged_in}} --}} -->
+     {{#if logged_in}}  
              <a href="/" class="text-md font-semibold leading-6 text-slate-100">Logout
-   <!--   {{!--  {{else}} --}} -->
+     {{else}} 
           <a href="/login" class="text-md font-semibold leading-6 text-slate-100">Login
             <span aria-hidden="true">&rarr;</span></a>
-   <!--  {{!--  {{/if}} --}} -->
+    {{/if}}  
     
         </div>
       </nav>
     </header>
-   <!--  {{>header}} -->
-
-    <!-- <main>{{{body}}}</main> -->
-  </body>
-</html>

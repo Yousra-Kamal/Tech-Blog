@@ -1,0 +1,23 @@
+body {
+  background-color: #f1fcfb94;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.card-header {
+  display: block;
+}
+
+.post {
+  margin: 5px;
+}
+
+.col {
+  margin: 5px;
+}
+
+.centerthisbutton {
+  text-align: center;
+}

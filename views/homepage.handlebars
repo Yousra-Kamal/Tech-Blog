@@ -1,1 +1,71 @@
- 
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="flex flex-col items-center py-5">
+      <h2
+        style="font-family: Bree Serif; text-shadow: 2px 2px 2px black ;color:#0c47b6 "
+        class="text-5xl text-gray-900 sm:text-5xl"
+      >Welcom to Tech Blog</h2>
+    </div>
+    <div
+      class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+    >
+
+      {{#each posts as |post|}}
+        <article class="post flex flex-col items-start justify-between">
+          <div class="relative w-full">
+            <div class="dashboard-post">
+              <img
+                src="../images/desktop.jpg"
+                alt="background-image"
+                class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+              />
+              <div
+                class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+              ></div>
+            </div>
+            <div class="group relative">
+              <div class="card-header dashboard-post max-w-xl">
+                <h4 class="card-title post-title"><a
+                    class="absolute inset-0 ml-4 link mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
+                    href="/post/{{id}}"
+                  >{{title}}</a></h4>
+                <div class="card-body post-body">
+                  <p
+                    class="card-body post-content mt-5 line-clamp-3 text-sm leading-6 text-gray-600"
+                  >{{content}}</p>
+
+                  <div class="mt-6 flex border-t border-gray-900/5 pt-6">
+                    <div class="relative flex items-center gap-x-4">
+                      <img
+                        src="../images/logo.jpg"
+                        alt="techblog logo"
+                        class="h-10 w-10 rounded-full bg-gray-50"
+                      />
+                      <div class="text-sm leading-6">
+                        <p
+                          class="card-text post-author font-semibold text-gray-900"
+                        >
+                          <span
+                            class="post-username absolute"
+                          >{{user.username}}</span>
+
+                          <div class="mt-8 flex items-center gap-x-4 text-xs">
+                            <time
+                              datetime="2020-03-16"
+                              class="post-body text-gray-500"
+                            >{{format_date post.createdAt}}</time>
+
+                          </div></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      {{/each}}
+
+    </div>
+  </div>
+</div>

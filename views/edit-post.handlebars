@@ -1,0 +1,43 @@
+<div class="py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <h2 class="text-base font-semibold leading-7 text-gray-900">
+      Edit or Delete your Blog Post.</h2>
+
+    <form class="card-body edit-post-form">
+      <div class="form-row">
+        <label for="post-title" class="form-label">Title</label>
+        <input
+          name="post-title"
+          id="title"
+          type="text"
+          value="{{post.title}}"
+          class="form-input form-control"
+        />
+      </div>
+
+      <div class="form-row mt-4 mb-4">
+        <label class="form-label" for="content">Content</label>
+        <input
+          name="content"
+          id="content"
+          type="text"
+          value="{{post.content}}"
+          class="form-input form-control"
+        />
+      </div>
+      <button
+        id="update"
+        type="submit"
+        class="rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+      >UPDATE POST</button>
+      <button
+        id="delete"
+        type="submit"
+        class="delete-post-btn rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+      >DELETE POST</button>
+    </form>
+
+  </div>
+</div>
+<script src="/js/edit-post.js"></script>
+<script src="/js/delete-post.js"></script>
